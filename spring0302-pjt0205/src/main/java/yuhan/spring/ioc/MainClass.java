@@ -13,7 +13,7 @@ public class MainClass {
 		myCalculator.sub();
 		myCalculator.mul();
 		myCalculator.div();
-		
+		   
 		ctx.close();
 		
 	}
