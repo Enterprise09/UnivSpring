@@ -2,7 +2,7 @@ package yuhan.spring.ioc;
 
 public class MyCalculator {
 
-	Calculator calc;
+	Calculator calculator;
 	private int first;
 	private int second;
 	
@@ -11,19 +11,19 @@ public class MyCalculator {
 	}
 	
 	public void add() {
-		calc.addtion(first, second);
+		calculator.addtion(first, second);
 	}
 	
 	public void sub() {
-		calc.substraction(first, second);
+		calculator.substraction(first, second);
 	}
 	
 	public void mul() {
-		calc.multiplication(first, second);
+		calculator.multiplication(first, second);
 	}
 	
 	public void div() {
-		calc.division(first, second);
+		calculator.division(first, second);
 	}
 
 	public int getFirst() {
@@ -42,13 +42,15 @@ public class MyCalculator {
 		this.second = second;
 	}
 
-	public Calculator getCalc() {
-		return calc;
+	public Calculator getCalculator() {
+		return calculator;
 	}
 
-	public void setCalc(Calculator calc) {
-		this.calc = calc;
+	public void setCalculator(Calculator calculator) {
+		this.calculator = calculator;
 	}
+
+	
 	
 	
 	
