@@ -6,7 +6,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:application.xml");
-		
+		   
 		MyCalculator myCalculator = ctx.getBean("myCalculator", MyCalculator.class);
 		
 		myCalculator.add();
