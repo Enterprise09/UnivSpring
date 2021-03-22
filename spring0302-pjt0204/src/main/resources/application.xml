@@ -8,7 +8,7 @@
 	<bean id="myCalculator" class="yuhan.spring.ioc.MyCalculator">
 		<!-- <property name="calculator">
 			<ref bean="calculator" />
-		</property> -->
+		</property> --><!--  -->
 		
 		<property name="first" value="10"></property>
 		<property name="second" value="5"></property>
