@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="student" class="yuhan.spring.di.Student">
+		<constructor-arg value="Trump"></constructor-arg>
+		<constructor-arg value="75"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Golf</value>
+				<value>Swim</value>
+			</list>
+		</constructor-arg>
+		<property name="height">
+			<value>190</value>
+		</property>
+		<property name="weight">
+			<value>105</value>
+		</property>				
+	</bean>
+	
+	<bean id="studentInfo" class="yuhan.spring.di.StudentInfo">
+		<property name="student">
+			<ref bean="student"></ref>
+		</property>
+	</bean>
+
+
+</beans>

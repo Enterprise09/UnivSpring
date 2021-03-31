@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+		
+	<bean id="BMICalculator" class="yuhan.spring.cont.BMICalculator">
+		<property name="lowWeight">
+			<value>18.5</value>
+		</property>
+		<property name="normalWeight">
+			<value>23</value>
+		</property>
+		<property name="overWeight">
+			<value>25</value>
+		</property>
+		<property name="obesity">
+			<value>30</value>
+		</property>
+	</bean>
+		
+	<bean id="myInfo" class="yuhan.spring.cont.MyInfo">
+		<property name="name">
+			<value>Teaho</value>
+		</property>
+		<property name="height">
+			<value>190</value>
+		</property>
+		<property name="weight">
+			<value>80</value>
+		</property>
+		<property name="hobbys">
+			<list>
+				<value>Swim</value>
+				<value>Shoting</value>
+				<value>Hacking</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+
+
+</beans>
