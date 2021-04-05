@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dog" class="yuhan.spring.xml.Dog">
+		<property name="myName" value="puddle"></property>
+	</bean>
+	
+	<bean id="cat" class="yuhan.spring.xml.Cat">
+		<property name="myName" value="norway"></property>
+	</bean>
+	
+	<bean id="petOwner" class="yuhan.spring.xml.PetOwner">
+		<constructor-arg ref="cat"></constructor-arg>
+	</bean>
+	
+
+</beans>
