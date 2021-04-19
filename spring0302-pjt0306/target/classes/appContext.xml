@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:annotation-config>
+	
+	</context:annotation-config>
+
+	<bean id="bolpen1" class="yuhan.spring.qualify.Bolpen">
+		<qualifier value="yuhan01"></qualifier>
+	</bean>
+	
+	<!-- bolpen객체가 여러개여서 에러가 나는데 주석으로 해결
+		다만 이것을 이렇게 이용할 수는 없는 것인지???
+	 <bean id="bolpen2" class="yuhan.spring.qualify.Bolpen">
+		<qualifier value="yuhan01"></qualifier>
+	</bean>
+	
+	<bean id="bolpen3" class="yuhan.spring.qualify.Bolpen">
+		<qualifier value="yuhan01"></qualifier>
+	</bean> -->
+	
+	<bean id="student" class="yuhan.spring.qualify.Student"></bean>
+
+</beans>
