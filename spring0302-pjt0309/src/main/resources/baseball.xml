@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="player1" class="yuhan.spring.init.Player">
+		<constructor-arg value="김하성"></constructor-arg>
+		<constructor-arg value="28"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>8번 타자</value>
+				<value>2루수</value>
+			</list>
+		</constructor-arg>
+		<property name="weight" >
+			<value>63</value>
+		</property>
+		<property name="height">
+			<value>180.2</value>
+		</property>
+	<!-- 
+		<property name="name" value="kekd"></property>
+		<property name="age"> 
+			<value>34</value>
+		</property>
+		<property name="position" value="sniper"></property> -->
+		
+	</bean>
+
+</beans>
