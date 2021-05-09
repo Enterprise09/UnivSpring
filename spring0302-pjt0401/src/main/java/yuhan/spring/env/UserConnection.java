@@ -54,8 +54,8 @@ public class UserConnection implements EnvironmentAware, InitializingBean, Dispo
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("afterPropertiesSet()");
-		setUserId(env.getProperty(userId));
-		setUserPw(env.getProperty(userPw));
+		setUserId(env.getProperty("user.id"));		// Error Fixed
+		setUserPw(env.getProperty("user.pw"));		// getProperty(userId) >> getProperty("user.id")
 	}
 
 }
