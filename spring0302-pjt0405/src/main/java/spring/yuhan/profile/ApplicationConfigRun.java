@@ -1,5 +1,6 @@
 package spring.yuhan.profile;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
@@ -7,13 +8,14 @@ import org.springframework.context.annotation.Profile;
 @Profile("run")
 public class ApplicationConfigRun {
 
+	@Bean
 	public ServerInfo serverInfo() {
 		
 		ServerInfo serverInfo = new ServerInfo();
 		serverInfo.setIpNum("457.153.88.19");
 		serverInfo.setPortNum("3002");
 		
-		return null;
+		return serverInfo;
 	}
 	
 }

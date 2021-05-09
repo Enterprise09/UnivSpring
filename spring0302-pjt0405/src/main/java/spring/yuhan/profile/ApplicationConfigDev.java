@@ -8,13 +8,13 @@ import org.springframework.context.annotation.Profile;
 @Profile("dev")
 public class ApplicationConfigDev {
 
-	@Bean(name = "serverInfo")
+	@Bean
 	public ServerInfo serverInfo() {		
 		ServerInfo serverInfo = new ServerInfo();
 		serverInfo.setIpNum("195.457.32.11");
 		serverInfo.setPortNum("8087");
 		
-		return null;
+		return serverInfo;
 	}
 	
 }
