@@ -9,13 +9,13 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		String config = null;
+		System.out.println("Enter the Activate CTX name : ");
 		Scanner scan = new Scanner(System.in);
 		String str = scan.next();
-		config = "dev";
-		if(str == "dev") {
+		if(str.equals("dev")) {
 			config = "dev";
 			System.out.println(config);
-		}else if(str == "run") {
+		}else if(str.equals("run")) {
 			config = "run";
 			System.out.println(config);
 		}
