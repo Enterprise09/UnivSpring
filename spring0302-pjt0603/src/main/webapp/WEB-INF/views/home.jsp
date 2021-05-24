@@ -10,5 +10,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<a href="board/confirmId">confirmId.jsp</a><br>
+<a href="board/checkId">checkId.jsp</a><br>
 </body>
 </html>
