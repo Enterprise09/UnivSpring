@@ -11,5 +11,6 @@
 
 	<P>  The time on the server is ${serverTime}. </P>
 	<a href="board/content">content.jsp</a><br>
+	<a href="board/reply">reply.jsp</a><br>
 </body>
 </html>

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Handles requests for the application home page.
@@ -43,6 +44,17 @@ public class HomeController {
 		model.addAttribute("id", 12345);
 		
 		return "board/content";
+	}
+	
+	
+	@RequestMapping("board/reply")
+	public ModelAndView reply() {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("board/reply");
+		mv.addObject("id", 12345);
+		
+		return mv;
 	}
 	
 }
