@@ -7,6 +7,9 @@
 <title>index.jsp</title>
 </head>
 <body>
-
+	<form action="student" method="post">
+		studentId : <input type="text" name="id"><br>
+		<input type="submit" value="전송">
+	</form>
 </body>
 </html>
