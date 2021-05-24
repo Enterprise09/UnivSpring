@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -35,5 +37,18 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	@RequestMapping
+	public String goIndex() {
+		return "index";
+	}
+	
+	public String goStudent(HttpServletRequest request, Model model) {
+		String id = request.getParameter("studentId");
+		model.addAttribute("studentId", id);
+		
+		return "student/studentId";
+	}
+	
 	
 }
