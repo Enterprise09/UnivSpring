@@ -40,6 +40,7 @@ public class HomeController {
 	
 	@RequestMapping("index")
 	public String goIndex() {
+		//return index
 		return "index";
 	}
 	
