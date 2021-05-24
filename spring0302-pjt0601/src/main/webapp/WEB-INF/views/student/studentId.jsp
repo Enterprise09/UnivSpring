@@ -7,6 +7,6 @@
 <title>studentId.jsp</title>
 </head>
 <body>
-	
+	studentId : ${studentId} <br>
 </body>
 </html>

@@ -38,13 +38,14 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping
+	@RequestMapping("index")
 	public String goIndex() {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/student", method = RequestMethod.GET)
 	public String goStudent(HttpServletRequest request, Model model) {
-		String id = request.getParameter("studentId");
+		String id = request.getParameter("id");
 		model.addAttribute("studentId", id);
 		
 		return "student/studentId";
