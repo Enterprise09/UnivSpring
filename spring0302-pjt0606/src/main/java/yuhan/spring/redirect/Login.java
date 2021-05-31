@@ -1,6 +1,9 @@
 package yuhan.spring.redirect;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,6 +16,17 @@ public class Login {
 	}
 	
 	
-	
+	@RequestMapping(value = "memberConfirm")
+	public String memberRedirect(HttpServletRequest req, Model model) {
+		
+		String id = req.getParameter("id");
+		if(id.equals("enterprise")) {
+			return "redirect:memberOk";
+		}
+		else {
+			return "redirect:memberFail";
+		}
+		
+	}
 
 }
