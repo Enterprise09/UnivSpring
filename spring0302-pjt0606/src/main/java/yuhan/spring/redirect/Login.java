@@ -24,6 +24,7 @@ public class Login {
 			return "redirect:memberOk";
 		}
 		else {
+			//Write Form by Redirect(redirect:path)
 			return "redirect:memberFail";
 		}
 		
