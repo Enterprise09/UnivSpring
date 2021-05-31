@@ -9,7 +9,7 @@ public class MyController {
 	public String userForm() {
 		
 		
-		return "/form/userForm2";
+		return "/user/userForm2";
 	}
 	
 	
@@ -17,9 +17,7 @@ public class MyController {
 	public String userInfor(
 			@ModelAttribute("userInfo") StudentInformation studentInformation) {
 		
-			
-		
-		return "form/userInfo2";
+		return "user/userInfo2";
 	}
 	
 	
