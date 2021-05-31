@@ -27,6 +27,16 @@ public class Login {
 			return "redirect:memberFail";
 		}
 		
+	}	
+	
+	@RequestMapping(value = "memberOk")
+	public String memberOk() {
+		return "member/memberOk";
+	}
+	
+	@RequestMapping(value = "memberFail")
+	public String memberFail() {
+		return "member/memberFail";
 	}
 
 }
