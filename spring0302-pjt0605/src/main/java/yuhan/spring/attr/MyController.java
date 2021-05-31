@@ -1,11 +1,13 @@
 package yuhan.spring.attr;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
 public class MyController {
 	
-	@RequestMapping("/form")
+	@RequestMapping(value = "/form")
 	public String userForm() {
 		
 		
@@ -13,7 +15,7 @@ public class MyController {
 	}
 	
 	
-	@RequestMapping("/userInfo")
+	@RequestMapping(value = "/userInfo")
 	public String userInfor(
 			@ModelAttribute("userInfo") StudentInformation studentInformation) {
 		
