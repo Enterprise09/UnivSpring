@@ -15,10 +15,13 @@ public class MemberController {
 	
 	@RequestMapping(value = "/inputOk")
 	public String inputOk(Member member, BindingResult result){
-		
-		
-		
-		return null;
+		String viewName = "member/memberOk";
+		MemberValidator mValidator = new MemberValidator();
+		mValidator.validate(member, result);
+		if(result.hasErrors()) {
+			viewName = "member/memInput";
+		}
+		return viewName;
 	}
 	
 }
