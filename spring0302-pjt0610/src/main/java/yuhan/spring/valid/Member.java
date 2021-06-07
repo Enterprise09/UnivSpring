@@ -4,7 +4,15 @@ public class Member {
 	
 	private String name;
 	private String id;
-	private String memNo;
+	private int memNo;
+	
+	
+	public int getMemNo() {
+		return memNo;
+	}
+	public void setMemNo(int memNo) {
+		this.memNo = memNo;
+	}
 	public String getName() {
 		return name;
 	}
@@ -17,10 +25,5 @@ public class Member {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getMemNo() {
-		return memNo;
-	}
-	public void setMemNo(String memNo) {
-		this.memNo = memNo;
-	}
+	
 }
