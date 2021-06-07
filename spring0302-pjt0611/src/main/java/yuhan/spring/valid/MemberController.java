@@ -22,8 +22,6 @@ public class MemberController {
 	@RequestMapping(value = "/inputOk")
 	public String inputOk(@ModelAttribute("member")@Valid Member member, BindingResult result){
 		String viewName = "member/memberOk";
-		MemberValidator mValidator = new MemberValidator();
-		mValidator.validate(member, result);
 		if(result.hasErrors()) {
 			viewName = "member/memInput";
 		}

@@ -1,6 +1,7 @@
 package yuhan.spring.valid;
 
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 public class MemberValidator implements Validator {
@@ -18,8 +19,7 @@ public class MemberValidator implements Validator {
 		String memName = member.getName();
 		
 		if(memName == null || memName.trim().isEmpty()) {
-			System.out.println("회원이름 입력오류");
-			errors.rejectValue("name", "회원이름 입력 오류 발생");
+			ValidationUtils.rejectIfEmpty(errors, "name", "입력시 오류 발생");
 		}
 		
 		String memId = member.getId();
@@ -33,7 +33,6 @@ public class MemberValidator implements Validator {
 			System.out.println("회원 주민번호 입력오류");
 			errors.rejectValue("memNo", "주민번호 입력오류");
 		}
-
 	}
 
 }
