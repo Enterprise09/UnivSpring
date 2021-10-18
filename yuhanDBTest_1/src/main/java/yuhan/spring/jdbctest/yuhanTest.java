@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 public class yuhanTest {
 
 	public static void main(String[] args) {
@@ -18,7 +22,7 @@ public class yuhanTest {
 			Connection conn = DriverManager.getConnection(url, "yuhan", "yuhan");
 			System.out.println("DB Connection: " + conn);
 			
-			String query = "select * from mvc_board";
+			String query = "select * from yuhan_board";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			ResultSet result = preparedStatement.executeQuery();
 			

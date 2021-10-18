@@ -19,7 +19,7 @@
 				<td><input type="text" name="b_subject" size="60"></td>
 			</tr>
 			<tr>
-				<td>이름 </td>
+				<td>내용 </td>
 				<td>
 					<textarea name="b_content" rows="10"></textarea>
 				</td>

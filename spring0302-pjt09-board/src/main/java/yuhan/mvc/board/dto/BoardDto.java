@@ -14,7 +14,11 @@ public class BoardDto {
 	}
 	
 	public BoardDto(int b_no, String b_name, String b_subject, String b_content, Timestamp b_date) {
-		
+		this.b_no = b_no;
+		this.b_name = b_name;
+		this.b_subject = b_subject;
+		this.b_content = b_content;
+		this.b_date = b_date;
 	}
 	
 	public int getB_no() {

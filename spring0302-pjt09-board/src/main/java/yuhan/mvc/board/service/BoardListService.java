@@ -13,7 +13,7 @@ public class BoardListService implements IBoardService {
 	public void execute(Model model) {
 		
 		BoardDao dao = new BoardDao();
-		ArrayList<BoardDto> dto = dao.list();;
+		ArrayList<BoardDto> dto = dao.list();
 		model.addAttribute("list", dto);
 	}
 
