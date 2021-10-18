@@ -26,7 +26,9 @@
 		</c:forEach>
 		<tr>
 			<td colspan="7">
-				<a href="write_view">글작성</a>
+				<a href="write_view">
+					<img src="/board/resources/write_b.gif">
+				</a>
 			</td>
 		</tr>		
 	</table>

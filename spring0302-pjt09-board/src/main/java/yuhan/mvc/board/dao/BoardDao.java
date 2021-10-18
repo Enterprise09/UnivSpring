@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 
 import yuhan.mvc.board.dto.BoardDto;
@@ -36,7 +37,7 @@ public class BoardDao {
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "select b_no, b_name, b_subject, b_content, b_date from YUHAN_BOARD";
+			String query = "select * from YUHAN_BOARD";
 			preparedStatement = connection.prepareStatement(query);
 			resultSet = preparedStatement.executeQuery(query);
 			while(resultSet.next()) {
@@ -72,9 +73,8 @@ public class BoardDao {
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "delete * from YUHAN_BOARD where b_no = ?";
+			String query = "delete from YUHAN_BOARD where b_no=" + b_no;
 			preparedStatement = connection.prepareStatement(query);
-			preparedStatement.setInt(1, Integer.parseInt(b_no));
 			preparedStatement.execute(query);
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -116,6 +116,74 @@ public class BoardDao {
 			}
 		}
 		
+	}
+
+	public BoardDto contentView(String b_no) {
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		BoardDto dto = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			String query = "select * from yuhan_board where b_no=?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, b_no);
+			
+			resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()) {
+				dto = new BoardDto(
+					resultSet.getInt("b_no"), 
+					resultSet.getString("b_name"), 
+					resultSet.getString("b_subject"), 
+					resultSet.getString("b_content"), 
+					resultSet.getTimestamp("b_date"));
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(resultSet != null) resultSet.close();
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return dto;
+	}
+
+	public void modify(String b_no, String b_name, String b_subject, String b_content) {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		BoardDto dto = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			String query = "update yuhan_board set b_name=?, b_subject=?, b_content=? where b_no=?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, b_name);
+			preparedStatement.setString(2, b_subject);
+			preparedStatement.setString(3, b_content);
+			preparedStatement.setString(4, b_no);
+			
+			int result = preparedStatement.executeUpdate();			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(resultSet != null) resultSet.close();
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }
