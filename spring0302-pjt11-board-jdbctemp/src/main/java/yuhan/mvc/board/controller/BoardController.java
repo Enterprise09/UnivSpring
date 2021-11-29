@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import yuhan.mvc.board.service.BoardListService;
 import yuhan.mvc.board.service.IBoardService;
+import yuhan.mvc.board.util.ConstantTemplate;
 
 @Controller
 public class BoardController {
@@ -18,6 +19,8 @@ public class BoardController {
 	@Autowired
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
+		
+		ConstantTemplate.template = this.template;
 	}
 
 
